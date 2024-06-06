@@ -177,7 +177,7 @@ int HashMap_Remove(HashMap* map, const char* key) {
     }
     HASHMAP_FREE_FN((char*)element->key);
     uint32_t ix = element - bucket->data;
-    memcpy(element, element + 1, (bucket->size - ix - 1) * sizeof(HashElement));
+    memmove(element, element + 1, (bucket->size - ix - 1) * sizeof(HashElement));
     --bucket->size;
     --map->element_count;
     return 1;
