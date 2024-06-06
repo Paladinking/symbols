@@ -2,7 +2,6 @@ import subprocess
 import os
 import sys
 import glob
-import yaml
 
 def write_out(name: str, data: dict) -> None:
     with open(name, 'w') as file:
